@@ -61,17 +61,17 @@ namespace DepthToPointCloud
 
         private void Update()
         {
-            var _envDepth_Texture2D = OcclusionManager.environmentDepthTexture;
+            var env_Texture = OcclusionManager.environmentDepthTexture;
 
             if (EnvDepth_RT == null)
             {
-                Width = _envDepth_Texture2D.width;
-                Height = _envDepth_Texture2D.height;
+                Width = env_Texture.width;
+                Height = env_Texture.height;
                 EnvDepth_RT = RenderTexture.GetTemporary(Width, Height, 0, RenderTextureFormat.ARGB32, RenderTextureReadWrite.Linear);
                 EnvDepth_RT.Create();
             }
 
-            Graphics.Blit(_envDepth_Texture2D, EnvDepth_RT, EnvDepth_Material);
+            Graphics.Blit(env_Texture, EnvDepth_RT, EnvDepth_Material);
 
             #region get buffer
             if (HubTexture == null)
