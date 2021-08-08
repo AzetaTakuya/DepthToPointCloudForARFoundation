@@ -1,3 +1,5 @@
+// Reference:https://github.com/Unity-Technologies/arfoundation-samples/tree/4.1
+
 Shader "Unlit/DepthGradient"
 {
     Properties
